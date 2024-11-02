@@ -19,7 +19,7 @@ This Bash script automates the setup of a new Django project within a virtual en
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/marouanaddou/django_env_setup.git
+git@github.com:marouanaddou/django_env_setup.git
 ```
 
 1. Go to the cloned directory:
