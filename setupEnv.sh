@@ -25,19 +25,22 @@ while :; do
 
         echo -ne "${GREEN}Enter name of project: $RESET"
         read project
-        envPath+="/"
-        envPath+=$project
-        mkdir -p $envPath
-	cd $envPath
-        python3 -m venv env
-	if [ $? -eq 0 ]; then
+
+	if [ -n "$project" ]; then
+        	envPath+="/"
+        	envPath+=$project
+        	mkdir -p $envPath
+		cd $envPath
+        	python3 -m venv env
+		if [ $? -eq 0 ]; then
 			source "$envPath/env/bin/activate" || { echo "Failed to activate virtual environment"; exit 1 ;}
 			echo -e "${GREEN}Django is installed$RESET" 
 			pip3 install django > /dev/null 2>&1
 			echo -e "${GREEN}Start Project $RESET"
 			django-admin startproject $project . 	
-	else
-		echo -e "$RED ERROR $REST"
+		else
+			echo -e "$RED ERROR $REST"
+		fi
 	fi
         break
     fi
