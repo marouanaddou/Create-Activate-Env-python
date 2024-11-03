@@ -28,12 +28,6 @@ git clone git@github.com:marouanaddou/django_env_setup.git
 cd django_env_setup
 ```
 
-1. Grant execute permissions to the script:
-
-```bash
-chmod +x run.sh
-```
-
 ## Usage
 
 Run the script:
